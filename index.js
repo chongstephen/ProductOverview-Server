@@ -10,10 +10,9 @@ module.exports.app = app;
 app.use(express.json());
 app.use(cors());
 
-console.log('Print', db)
+
 app.get('/products', controller.get);
 app.get('/products/:product_id', controller.getOne);
-console.log('hello')
 app.get('/products/:product_id/styles', controller.getStyles);
 app.get('/products/:product_id/related', controller.getRelated);
 

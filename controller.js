@@ -8,8 +8,6 @@ module.exports = {
         res.status(200).send(response);
       })
       .catch((err) => {
-        console.log('inside controller',err);
-        console.log('models get all', models.getAll);
         res.status(500).send(err);
       });
   },
@@ -30,7 +28,6 @@ module.exports = {
         res.status(200).send(response);
       })
       .catch((err) => {
-        console.log(err)
         res.status(500).send(err);
       });
   },
@@ -41,7 +38,6 @@ module.exports = {
         res.status(200).send(response);
       })
       .catch((err) => {
-        console.log(err)
         res.status(500).send(err);
       });
   },

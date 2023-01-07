@@ -8,12 +8,10 @@ module.exports = {
         const query = 'SELECT * FROM product limit 10';
         return connection.query(query)
           .then((res) => {
-            console.log('whatever')
             connection.release();
             return res.rows;
           })
           .catch((err) => {
-            console.log('inside models',err)
             connection.release();
             throw err;
           });

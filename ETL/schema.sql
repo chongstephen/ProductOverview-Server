@@ -86,3 +86,15 @@ COPY skus (id, styleId, size, quantity)
 FROM 'C:\Users\Public\csv\skus.csv'
 DELIMITER ','
 CSV HEADER;
+
+CREATE INDEX productIdx ON product (id);
+
+CREATE INDEX stylesIdx ON styles (product_id);
+
+CREATE INDEX featuresIdx ON features (product_id);
+
+CREATE INDEX relatedIdx ON related (current_product_id);
+
+CREATE INDEX photosIdx ON photos (styleId);
+
+CREATE INDEX skusIdx ON skus (styleId);

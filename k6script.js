@@ -8,6 +8,6 @@ export const options = {
 
 export default function () {
 
-  http.get(`http://localhost:3000/products/${Math.floor(Math.random() * (1000000 - 1 + 1)) + 1}`);
+  http.get(`http://localhost:3000/products/${Math.floor(Math.random() * (100000 - 1 + 1)) + 1}`);
   sleep(1);
 }
