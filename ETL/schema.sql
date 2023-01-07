@@ -1,7 +1,7 @@
 DROP DATABASE IF EXISTS products;
 CREATE DATABASE products;
 
-\c products;
+\copy products;
 
 DROP SCHEMA IF EXISTS productsdata;
 CREATE SCHEMA productsdata;
@@ -58,31 +58,31 @@ CREATE TABLE skus (
 );
 
 COPY product (id, name, slogan, description, category, default_price)
-FROM '\Users\steph\hackreactor\ProductOverview-Server\ETL\csv\product.csv'
+FROM 'C:\Users\Public\csv\product.csv'
 DELIMITER ','
 CSV HEADER;
 
 COPY styles (id, product_id, name, sale_price, original_price, default_style)
-FROM '\Users\steph\hackreactor\ProductOverview-Server\ETL\csv\styles.csv'
+FROM 'C:\Users\Public\csv\styles.csv'
 DELIMITER ','
 CSV HEADER;
 
 COPY related (id, current_product_id, related_product_id)
-FROM '\Users\steph\hackreactor\ProductOverview-Server\ETL\csv\related.csv'
+FROM 'C:\Users\Public\csv\related.csv'
 DELIMITER ','
 CSV HEADER;
 
 COPY features (id, product_id, feature, value)
-FROM '\Users\steph\hackreactor\ProductOverview-Server\ETL\csv\features.csv'
+FROM 'C:\Users\Public\csv\features.csv'
 DELIMITER ','
 CSV HEADER;
 
 COPY photos (id, styleId, url, thumbnail_url)
-FROM '\Users\steph\hackreactor\ProductOverview-Server\ETL\csv\photos.csv'
+FROM 'C:\Users\Public\csv\photos.csv'
 DELIMITER ','
 CSV HEADER;
 
 COPY skus (id, styleId, size, quantity)
-FROM '\Users\steph\hackreactor\ProductOverview-Server\ETL\csv\skus.csv'
+FROM 'C:\Users\Public\csv\skus.csv'
 DELIMITER ','
 CSV HEADER;
